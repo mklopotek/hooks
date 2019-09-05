@@ -17,11 +17,11 @@ const BookForm = (props) => {
     }
 
     return (
-        <div style={{ display: 'flex', 'flex-direction': 'row' }}>
-            <input placeholder={'Title'} value={title} onChange={e => setTitle(e.target.value)} />
-            <input placeholder={'Author'} value={author} onChange={e => setAuthor(e.target.value)} />
+        <form style={{ display: 'flex', 'flex-direction': 'row' }}>
+            <input type={'text'} placeholder={'Title'} value={title} onChange={e => setTitle(e.target.value)} />
+            <input type={'text'}  placeholder={'Author'} value={author} onChange={e => setAuthor(e.target.value)} />
             <button type={'submit'} onClick={onSubmit}>Add book</button>
-        </div>
+        </form>
     )
 }
 
