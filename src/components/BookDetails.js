@@ -5,7 +5,7 @@ const BookDetails = (props) => {
     const { book: { title, id, author } } = props
     const { removeBook } = useContext(BookContext)
     return (
-        <li>
+        <li onClick={() => removeBook(id)}>
             <div className={"title"}>{title}</div>
             <div className={'author'}>{author}</div>
         </li>
