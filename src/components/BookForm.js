@@ -6,21 +6,18 @@ const BookForm = (props) => {
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
 
-    const onSubmit = () => {
-        if (!title || !author) {
-            return
-        }
-
+    const handleSubmit = (e) => {
+        e.preventDefault()
         addBook(title, author)
         setTitle('')
         setAuthor('')
     }
 
     return (
-        <form style={{ display: 'flex', 'flex-direction': 'row' }}>
-            <input type={'text'} placeholder={'Title'} value={title} onChange={e => setTitle(e.target.value)} />
-            <input type={'text'}  placeholder={'Author'} value={author} onChange={e => setAuthor(e.target.value)} />
-            <button type={'submit'} onClick={onSubmit}>Add book</button>
+        <form style={{ display: 'flex', 'flex-direction': 'row' }} onSubmit={handleSubmit}>
+            <input type={'text'} placeholder={'Title'} value={title} onChange={e => setTitle(e.target.value)} required />
+            <input type={'text'} placeholder={'Author'} value={author} onChange={e => setAuthor(e.target.value)} required />
+            <button type={'submit'}>Add book</button>
         </form>
     )
 }
